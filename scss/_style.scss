@@ -1,0 +1,7 @@
+.s1 {
+    .container {
+         @include  widthepar ($container);
+        margin: 0 auto;
+    }
+    
+}
