@@ -2,3 +2,18 @@
     max-width: $max;
     width: $width;
 }
+@mixin flexebi ($flex, $justif, $align, $row){
+    display: $flex;
+    justify-content: $justif;
+    align-items: $align;
+    flex-direction: $row;
+  
+ }
+ @mixin test () {
+        @include  widthepar ($container);
+         margin: 0 auto;
+ }
+ @mixin size($width1, $height2) {
+    width:$width1;
+    height:$height2;
+ }

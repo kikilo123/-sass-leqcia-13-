@@ -1,7 +1,77 @@
 .s1 {
+    padding: 50px 0;
+    background-color: aqua;
     .container {
-         @include  widthepar ($container);
-        margin: 0 auto;
+        //  @include  widthepar ($container);
+        //  margin: 0 auto;
+        @extend %container-props;
+         & > h1 {
+           font-size: 42px;
+           color: red;
+           margin-bottom: 25px;
+         }
+         @media (max-width:$breick){
+            text-align: center;
+         }
+           
+        }
+    .content {
+             @include flexebi (flex, space-between, center, row);
+             & > img {
+                width: 40%;
+                border-radius: 10px;
+                @media (max-width:$breick){
+                    width: 60%;
+                    margin-bottom: 50px;
+                 }
+             }
+             
+        & > p {
+            width: 50%;
+            line-height:18px;
+            font-size: 18px;
+            text-transform:capitalize;
+            letter-spacing: 1px;
+            word-spacing: 3px;
+            &::after {
+                content:'\2714';
+            }
+            &::first-letter {
+                font-size: 30px;
+                color: blue;
+            }
+         
+        }
+        @media (max-width: $breick){
+            flex-direction: column;
+            & > p {
+                font-size: 28px;
+                width: 100%;
+                line-height: 30px;
+            }
+            
+        }
     }
-    
+}
+.s2 {
+    background-color: lightblue;
+    .container {
+        @extend %container-props;
+        @include flexebi (flex, space-between, center, row);
+        & > .bloc {
+            // width: 300px;
+            // height: 300px;
+            @include size (300px, 300px);
+            background-color: red;
+            &:first-child {
+                background-color: blue;
+            }
+            &:nth-child(2) {
+                background-color: yellow;
+            }
+            &:last-child {
+                background-color: green
+            }
+        }
+    }
 }
